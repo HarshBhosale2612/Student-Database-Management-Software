@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: linear-gradient(135deg,#232526,#414345);
+    font-family: Arial;
+}
+
+.card {
+    width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color:white;
+}
+
+input, button {
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:8px;
+}
+
+input {
+    background: rgba(255,255,255,0.2);
+    color:white;
+}
+
+button {
+    background: linear-gradient(45deg,#fc466b,#3f5efb);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Edit Student</h2>
+
+<form method="POST">
+{% csrf_token %}
+<input name="roll_no" value="{{ student.roll_no }}">
+<input name="name" value="{{ student.name }}">
+<input name="email" value="{{ student.email }}">
+<input name="course" value="{{ student.course }}">
+<input name="age" value="{{ student.age }}">
+<input name="marks" value="{{ student.marks }}">
+<input name="attendance" value="{{ student.attendance }}">
+<input type="date" name="dob" value="{{ student.dob }}">
+<button>Update</button>
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background: linear-gradient(135deg,#ff512f,#dd2476);
+    font-family: Arial;
+}
+
+.card {
+    width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color:white;
+}
+
+input, button {
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:8px;
+}
+
+input {
+    background: rgba(255,255,255,0.2);
+    color:white;
+}
+
+button {
+    background: linear-gradient(45deg,#00f260,#0575e6);
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+<h2>Add Student</h2>
+
+<form method="POST">
+{% csrf_token %}
+<input name="roll_no" placeholder="Roll No">
+<input name="name" placeholder="Name">
+<input name="email" placeholder="Email">
+<input name="course" placeholder="Course">
+<input name="age" placeholder="Age">
+<input name="marks" placeholder="Marks">
+<input name="attendance" placeholder="Attendance">
+<input type="date" name="dob">
+<button>Add</button>
+</form>
+
+</div>
+</body>
+</html>
